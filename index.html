@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -16,30 +16,33 @@
 
 <body>
     <div class="container">
-        <div class="search-box">
+        <div class="search_box">
             <i class="fa-solid fa-location-dot"></i>
             <input type="text" name="search" id="search" placeholder="Cherchez une ville...">
             <button class="fa-sharp fa-solid fa-magnifying-glass"></button>
-            <div class="error"> <img src="/images/404error.avif" alt="404"></div>
-            <div class="weather_box">
-                <img src="" alt="">
-                <p class="temperature">temperature</p>
-                <p class="description">Description</p>
-            </div>
-            <div class="detail_box">
-                <div class="humidity">
-                    <i class="fa-solid fa-water"></i>
-                    <div class="text">
-                        <span></span>
-                        <p>Humidity</p>
-                    </div>
+        </div>
+        <div class="not-found">
+            <img src="/images/404error.avif">
+            <p>Localité non trouvée...</p>
+        </div>
+        <div class="weather_box">
+            <img src="" alt="">
+            <p class="temperature">0 Degres</p>
+            <p class="description">Nuages</p>
+        </div>
+        <div class="detail_box">
+            <div class="humidity">
+                <i class="fa-solid fa-water"></i>
+                <div class="text">
+                    <span>10 %</span>
+                    <p>Humidity</p>
                 </div>
-                <div class="wind">
-                    <i class="fa-solid fa-wind"></i>
-                    <div class="text">
-                        <span></span>
-                        <p>Wind</p>
-                    </div>
+            </div>
+            <div class="wind">
+                <i class="fa-solid fa-wind"></i>
+                <div class="text">
+                    <span>10 Km/h</span>
+                    <p>Wind</p>
                 </div>
             </div>
         </div>
