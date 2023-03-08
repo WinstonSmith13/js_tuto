@@ -30,6 +30,12 @@ body {
 }
 
 .container .expanded{
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    padding: 28px 32px;
+    overflow: hidden;
+    transition: 0.6s, ease-out;
     height: auto;
     width: 100%;
 }
