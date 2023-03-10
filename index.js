@@ -10,7 +10,7 @@ search.addEventListener('click', () => {
 
     const city = document.querySelector('.search_box input').value;
 
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + ',CA&appid=' + key)
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=' + key)
         .then((response) => response.json())
         .then(json => {
             if (json.cod === '404') {
@@ -20,14 +20,42 @@ search.addEventListener('click', () => {
                 error404.style.display = 'block';
                 error404.classList.add('fadeIn');
                 return;
-            } 
-                error404.style.display = 'none';
-                error404.classList.remove('fadeIn');
+            }
 
-                const image = document.querySelector('.weather_box img');
-                const temperature = document.querySelector('.temperature');
-                const description = document.querySelector('.description');
+            error404.style.display = 'none';
+            error404.classList.remove('fadeIn');
+
+            const image = document.querySelector('.weather_box img');
+            const temp = document.querySelector('.temp');
+            const description = document.querySelector('.description');
+            const humidity = document.querySelector('.humidity span');
+            const wind = document.querySelector('.wind span')
+
+
+            console.log(json.weather[0].main)
+
+            switch(json.weather[0].main) {
+                case 'Clouds':
+                    image.src = 'images/cloud.png';
+                    break;
+            }
+
             
+
+            temp.innerHTML = `${json.main.temp} <span> °C </span>`;
+
+            humidity.innerHTML = `${json.main.humidity}<span> % </span> `;
+            wind.innerHTML = `${json.wind.speed}<span> km/h </span>`;
+
+            console.log(json.main.temp);
+            console.log(json.main.humidity);
+            console.log(json.wind.speed);
+
+            container.style.height = 'auto';
+            weatherBox.style.display = '';
+            weatherBox.classList.add('fadeIn');
+            detailBox.style.display = '';
+            detailBox.classList.add('fadeIn');
 
 
         })
